@@ -4,7 +4,7 @@ Translating
 Nếu bạn muốn sử dụng ngôn ngữ của bạn cho Mastodon, đây là cách làm.
 
 * [Tổng quan](#tổngquan)
-* [Quá trình](#quátrình)
+* [Quá trình](#Quá trình)
   * [Obtain the Source Code](#obtain-the-source-code)
   * [Translating](#translating)
   * [Declaring the language](#declaring-the-language)
