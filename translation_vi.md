@@ -3,8 +3,8 @@ Translating
 
 Nếu bạn muốn sử dụng ngôn ngữ của bạn cho Mastodon, đây là cách làm.
 
-* [Overview](#overview)
-* [Procedures](#procedures)
+* [Tổng quan](#tongquan)
+* [Quá trình](#quatrinh)
   * [Obtain the Source Code](#obtain-the-source-code)
   * [Translating](#translating)
   * [Declaring the language](#declaring-the-language)
@@ -17,7 +17,7 @@ Nếu bạn muốn sử dụng ngôn ngữ của bạn cho Mastodon, đây là c
 
 ---
 
-## Overview
+## Tổng quan
 
 Mastodon bao gồm 2 thành phần, máy chủ và web client. Các bản dịch cho web client nằm trong [`app/javascript/mastodon/locales`] (https://github.com/tootsuite/mastodon/tree/master/app/javascript/mastodon/locales). Đối với phía máy chủ, các bản dịch nằm trong [`config/locales`] (https://github.com/tootsuite/mastodon/tree/master/config/locales) và được chia thành các tệp khác nhau. Ngoài ra, các mẫu email cho máy chủ nằm trong [`app/views/user_mailer`] (https://github.com/tootsuite/mastodon/tree/master/app/views/user_mailer). Đây là tất cả các tệp bạn cần dịch:
 | File gốc (English) | Vị trí | Mô tả |
@@ -31,7 +31,7 @@ Mastodon bao gồm 2 thành phần, máy chủ và web client. Các bản dịch
 | [`password_change.en.html.erb`](https://github.com/tootsuite/mastodon/blob/master/app/views/user_mailer/password_change.en.html.erb)<br>[`password_change.en.text.erb`](https://github.com/tootsuite/mastodon/blob/master/app/views/user_mailer/password_change.en.text.erb) | `app/views/user_mailer/password_change.en.html.erb`<br>`app/views/user_mailer/password_change.en.text.erb` | Thông báo thay đổi mật khẩu cho Devise
 | [`reset_password_instructions.en.html.erb`](https://github.com/tootsuite/mastodon/blob/master/app/views/user_mailer/reset_password_instructions.en.html.erb)<br>[`reset_password_instructions.en.text.erb`](https://github.com/tootsuite/mastodon/blob/master/app/views/user_mailer/reset_password_instructions.en.text.erb) | `app/views/user_mailer/reset_password_instructions.en.html.erb`<br>`app/views/user_mailer/reset_password_instructions.en.text.erb`  | Hướng dẫn đặt lại mật khẩu cho  Devise
 
-## Procedures
+## Quá trình
 
 ### Obtain the Source Code
 
@@ -99,9 +99,9 @@ eat_apple:
   other: You ate %{count} apples.
 ```
 
-Trong cả hai ví dụ, bạn có thể thấy trường hợp `một` và trường hợp` khác` được mô tả cho các chuỗi đa nguyên. Các chuỗi chính xác được chọn theo số lượng bao nhiêu - khi có chính xác một trong số đó, câu chuyển sang trường hợp `một`; nếu không thì nó chuyển sang trường hợp `khác`. Đây là cách thức hoạt động của việc plualization đối với tiếng Anh (`en`) và một số ngôn ngữ khác.
+Trong cả hai ví dụ, bạn có thể thấy trường hợp `once` và trường hợp` other` được mô tả cho các chuỗi đa nguyên. Các chuỗi chính xác được chọn theo số lượng bao nhiêu - khi có chính xác một trong số đó, câu chuyển sang trường hợp `một`; nếu không thì nó chuyển sang trường hợp `other`. Đây là cách thức hoạt động của việc plualization đối với tiếng Anh (`en`) và một số ngôn ngữ khác.
 
-Tuy nhiên, có nhiều ngôn ngữ không hoạt động theo cách một chiều. Đánh bóng thành bốn dạng số nhiều, có tên tương ứng là `một`,` vài`, `nhiều`, và` khác`. Tiếng Ả Rập có sáu. Tiếng Trung, tiếng Nhật và tiếng Hàn chỉ có một dạng được gọi là `khác`. Nếu ngôn ngữ của bạn không sử dụng một / các dạng số nhiều khác, hãy nhớ xem phần chính của [Quy tắc Unicode CIDR Số nhiều] (http://www.unicode.org/cldr/charts/28/supplemental/language_plural_rules.html ) đồ thị. Cũng theo nguyên tắc chung, hãy luôn bắt đầu phiên âm với trường hợp `khác` trong các tệp tiếng Anh vì chúng được khái quát tốt hơn so với trường hợp` một`.
+Tuy nhiên, có nhiều ngôn ngữ không hoạt động theo cách một chiều. Đánh bóng thành bốn dạng số nhiều, có tên tương ứng là `one`,` few`, `many`, và` other`. Tiếng Ả Rập có sáu. Tiếng Trung, tiếng Nhật và tiếng Hàn chỉ có một dạng được gọi là `other`. Nếu ngôn ngữ của bạn không sử dụng một / các dạng số nhiều khác, hãy nhớ xem phần chính của [Quy tắc Unicode CIDR Số nhiều] (http://www.unicode.org/cldr/charts/28/supplemental/language_plural_rules.html ) đồ thị. Cũng theo nguyên tắc chung, hãy luôn bắt đầu phiên âm với trường hợp `khác` trong các tệp tiếng Anh vì chúng được khái quát tốt hơn so với trường hợp `one`.
 ### Appendix B. Command Tools
 
 Chúng tôi có các công cụ dòng lệnh để trợ giúp người dịch trong công việc của họ. Chúng thực sự hữu ích.
@@ -112,7 +112,7 @@ Chúng tôi có các công cụ dòng lệnh để trợ giúp người dịch t
 
 Bạn cần có [Ruby] (https://www.ruby-lang.org/en/) và [NodeJS] (https://nodejs.org/en/) thiết lập trong máy của bạn. Nếu bạn muốn giữ cho đường dẫn global của mình sạch sẽ, bạn có thể sử dụng [rvm] (https://rvm.io/) và [nvm] (https://github.com/creationix/nvm).
 
-Bạn cũng cần cài đặt [sợi] (https://yarnpkg.com/) với thiết lập nodejs của mình.
+Bạn cũng cần cài đặt [yarn] (https://yarnpkg.com/) với thiết lập nodejs của mình.
 
 Để cài đặt Ruby với rvm:
 ```
@@ -120,7 +120,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 \curl -sSL https://get.rvm.io | bash -s stable
 ```
 
-Để cài đặt nodejs và sợi với nvm:
+Để cài đặt nodejs và yarn với nvm:
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 source ~/.bashrc
